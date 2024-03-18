@@ -6,7 +6,7 @@
 /*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 21:51:04 by icruces-          #+#    #+#             */
-/*   Updated: 2024/03/16 19:15:53 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/03/18 19:44:35 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -235,43 +235,176 @@ char				*ft_strdup(const char *s1);
  */
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 
+/**
+ * @brief Concatenates two strings into a new string (with malloc).
+ *
+ * @param s1 The first string.
+ * @param s2 The second string.
+ * @return A new string resulting from the concatenation of `s1` and `s2`, or NULL if allocation fails.
+ */
 char				*ft_strjoin(char const *s1, char const *s2);
 
-char				*ft_strtrim(char const *s1, char const *set);
 /**
- * @brief it sends a character ´c´.
+ * @brief Trims the beginning and end of `s1` with the specified characters in `set`.
  *
- * @param c character to send
- * @param fd file descriptor to write
+ * @param s1 The string to be trimmed.
+ * @param set The set of characters to trim from the beginning and end of `s1`.
+ * @return The trimmed string, or NULL if allocation fails.
  */
+char				*ft_strtrim(char const *s1, char const *set);
 
+/**
+ * @brief Splits a string into an array of strings using a specified delimiter character.
+ *
+ * This function allocates (with malloc) and returns an array of strings obtained by
+ * splitting `s` using the character `c` as a delimiter. The array must end with a NULL
+ * pointer to indicate the end of the array. The function must be able to handle multiple
+ * consecutive delimiters as well as delimiters at the start or end of the string.
+ *
+ * @param s The string to be split.
+ * @param c The delimiter character.
+ * @return An array of strings resulting from the split. Returns NULL if the allocation fails.
+ */
 char				**ft_split(char const *s, char c);
-
+/**
+ * @brief Converts an integer to a null-terminated string.
+ *
+ * @param n The integer to convert.
+ * @return The string representation of the integer, or NULL if allocation fails.
+ */
 char				*ft_itoa(int n);
 
+/**
+ * @brief Applies the function `f` to each character of the string `s` to create a new string (with malloc) resulting from successive applications of `f`.
+ *
+ * @param s The string on which to iterate.
+ * @param f The function to apply to each character.
+ * @return The string created from the successive applications of `f`, or NULL if the allocation fails.
+ */
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
+/**
+ * @brief Outputs the character `c` to the given file descriptor.
+ *
+ * @param c The character to output.
+ * @param fd The file descriptor on which to write.
+ */
 void				ft_putchar_fd(char c, int fd);
 
+/**
+ * @brief Outputs the string `s` to the given file descriptor.
+ *
+ * @param s The string to output.
+ * @param fd The file descriptor on which to write.
+ */
 void				ft_putstr_fd(char *s, int fd);
 
+/**
+ * @brief Outputs the string `s` to the given file descriptor, followed by a newline.
+ *
+ * @param s The string to output.
+ * @param fd The file descriptor on which to write.
+ */
 void				ft_putendl_fd(char *s, int fd);
 
+/**
+ * @brief Outputs the integer `n` to the given file descriptor.
+ *
+ * @param n The integer to output.
+ * @param fd The file descriptor on which to write.
+ */
 void				ft_putnbr_fd(int n, int fd);
 
+/**
+ * @brief Compares up to `n` characters of the string `s1` to `s2`. Comparison is done lexicographically.
+ *
+ * @param s1 The first string.
+ * @param s2 The second string.
+ * @param n The maximum number of characters to compare.
+ * @return <0 if `s1` is less than `s2`, 0 if they are equal, or >0 if `s1` is greater than `s2`.
+ */
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 
+/**
+ * @brief Applies the function `f` to each character of the string `s`, passing its index as the first argument. Each character is passed by address to `f` to be modified if necessary.
+ *
+ * @param s The string on which to iterate.
+ * @param f The function to apply to each character of `s`.
+ */
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 
+/**
+ * @brief Creates a new list element with the provided content.
+ *
+ * @param content The content to be stored in the new element. Can be NULL.
+ * @return A new list element with `content` as its content field.
+ */
 t_list				*ft_lstnew(void *content);
 
+/**
+ * @brief Adds an element to the end of a list.
+ *
+ * @param lst A pointer to the first link of a list.
+ * @param new The link to add at the end of the list.
+ */
 void				ft_lstadd_back(t_list **lst, t_list *new);
+
+/**
+ * @brief Takes as a parameter an element and frees the memory of the element’s content using the function `del` given as a parameter, then frees the element. The memory of `next` must not be freed.
+ *
+ * @param lst The element to free.
+ * @param del The address of the function used to delete the content.
+ */
 void				ft_lstdelone(t_list *lst, void (*del)(void *));
+
+/**
+ * @brief Adds an element at the beginning of a list.
+ *
+ * @param lst The address of a pointer to the first link of a list.
+ * @param new The link to add at the beginning of the list.
+ */
 void				ft_lstadd_front(t_list **lst, t_list *new);
+
+/**
+ * @brief Deletes and frees the given element and every successor of that element, using the function `del` and free(3). Finally, the pointer to the list must be set to NULL.
+ *
+ * @param lst The address of a pointer to an element.
+ * @param del The address of the function used to delete the content of the element.
+ */
 void				ft_lstclear(t_list **lst, void (*del)(void *));
+
+/**
+ * @brief Iterates the list `lst` and applies the function `f` to the content of each element.
+ *
+ * @param lst The address of a pointer to an element.
+ * @param f The address of the function used to apply to the content of each element.
+ */
 void				ft_lstiter(t_list *lst, void (*f)(void *));
+
+/**
+ * @brief Returns the last element of the list.
+ *
+ * @param lst The beginning of the list.
+ * @return Last element of the list.
+ */
 t_list				*ft_lstlast(t_list *lst);
+
+/**
+ * @brief Counts the number of elements in a list.
+ *
+ * @param lst The beginning of the list.
+ * @return The length of the list.
+ */
 int					ft_lstsize(t_list *lst);
+
+/**
+ * @brief Iterates a list `lst` and applies the function `f` to the content of each element. Creates a new list resulting from the successive applications of the function `f`. The `del` function is used to delete the content of an element if needed.
+ *
+ * @param lst The address of a pointer to an element.
+ * @param f The address of the function used to apply to the content of each element.
+ * @param del The address of the function used to delete the content of an element if needed.
+ * @return The new list, or NULL if the allocation fails.
+ */
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 
