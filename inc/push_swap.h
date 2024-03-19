@@ -5,6 +5,7 @@
     # include "libft.h"
 
 	int main(int argc, char **argv);
+    void inc_to_str(int argc, char **argv, char *str);
 
 
 #endif

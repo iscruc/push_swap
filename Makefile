@@ -6,7 +6,7 @@
 #    By: icruces- <ismaelcruc@gmail.com>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/16 16:58:51 by icruces-          #+#    #+#              #
-#    Updated: 2024/03/17 23:35:09 by icruces-         ###   ########.fr        #
+#    Updated: 2024/03/20 00:36:09 by icruces-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,14 +21,15 @@ OBJ_DIR = obj/
 
 
 #Compiler and Flags
-CC 	= gcc 
+CC 		= gcc 
 CFLAGS 	= -Wall -Wextra -Werror
 AR		= ar -crs
-RM = rm -f
+RM 		= rm -f
 LDLIBS	:= -lft
+COMPLIBS = -I$(INC) -I$(LIBS)/inc
 
 #Source Files
-SRC_FILES	=  main.c 
+SRC_FILES	=  parse.c errors.c
 
 OBJ = $(addprefix $(OBJ_DIR), $(SRC_FILES:.c=.o))
 
@@ -47,7 +48,7 @@ all: $(TARGET)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(OBJ_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(COMPLIBS) -c $< -o $@
 
 $(NAME): $(OBJ)
 	$(call PRINT_MESSAGE,"Creating library files of $(LIBS)...")
@@ -71,8 +72,8 @@ fclean:
 
 re: fclean all
 
-$(TARGET): $(OBJ)
+$(TARGET): main.c $(NAME)
 	$(call PRINT_MESSAGE, "Generating executable $(TARGET)...")
-	$(CC) $(CFLAGS) -o $@ $^ $(LDLIBS)
+	$(CC) $(CFLAGS) -o $@ $^ $(COMPLIBS)
 
 .PHONY: all clean fclean re
