@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: icruces- <ismaelcruc@gmail.com>            +#+  +:+       +#+         #
+#    By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/16 16:58:51 by icruces-          #+#    #+#              #
-#    Updated: 2024/03/20 00:36:09 by icruces-         ###   ########.fr        #
+#    Updated: 2024/03/20 19:51:25 by icruces-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ CC 		= gcc
 CFLAGS 	= -Wall -Wextra -Werror
 AR		= ar -crs
 RM 		= rm -f
-LDLIBS	:= -lft
+LDLIBS	:= -L$(LIBS) -lft
 COMPLIBS = -I$(INC) -I$(LIBS)/inc
 
 #Source Files
@@ -74,6 +74,6 @@ re: fclean all
 
 $(TARGET): main.c $(NAME)
 	$(call PRINT_MESSAGE, "Generating executable $(TARGET)...")
-	$(CC) $(CFLAGS) -o $@ $^ $(COMPLIBS)
+	$(CC) $(CFLAGS) -o $@ $^ $(COMPLIBS) $(LDLIBS)
 
 .PHONY: all clean fclean re

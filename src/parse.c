@@ -3,23 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icruces- <ismaelcruc@gmail.com>            +#+  +:+       +#+        */
+/*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 21:01:55 by icruces-          #+#    #+#             */
-/*   Updated: 2024/03/19 22:33:28 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/03/20 20:26:12 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void inc_to_str(int argc, char **argv, char *str)
+/* 
+void valid_num(int argc, char **argv, char *str)
 {
-	int i;
-	
-	i = 1;	
-	while(i < argc)
+	if()
 	{
-		str = ft_strjoin(str, argv[i]);
-		i++;
+		
 	}
-}
+} */

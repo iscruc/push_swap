@@ -6,7 +6,7 @@
 /*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 19:06:18 by icruces-          #+#    #+#             */
-/*   Updated: 2024/03/18 19:49:05 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/03/20 19:19:44 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ char	*get_next_line(int fd);
  * @return The updated stash with the newly read content, or NULL if an error occurs.
  */
 char	*ft_readfile(int fd, char *stash);
+
+
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10

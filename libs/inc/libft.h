@@ -6,7 +6,7 @@
 /*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 21:51:04 by icruces-          #+#    #+#             */
-/*   Updated: 2024/03/18 19:44:35 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/03/20 19:19:57 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -407,5 +407,9 @@ int					ft_lstsize(t_list *lst);
  */
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+
+
+int	ft_atol(const char *str);
+
 
 #endif

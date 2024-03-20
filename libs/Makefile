@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: icruces- <ismaelcruc@gmail.com>            +#+  +:+       +#+         #
+#    By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/16 17:31:05 by icruces-          #+#    #+#              #
-#    Updated: 2024/03/17 22:38:17 by icruces-         ###   ########.fr        #
+#    Updated: 2024/03/20 20:25:48 by icruces-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,12 +25,13 @@ SRC_FILES	=  \
 			ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_toupper.c ft_tolower.c \
 			ft_strlen.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c \
 			ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlcpy.c ft_strlcat.c \
-			ft_calloc.c ft_strdup.c \
+			ft_calloc.c ft_strdup.c ft_atol.c\
 			ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
 			ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 			ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstadd_back_bonus.c \
 			ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c \
-			get_next_line.c get_next_line_utils.c
+			get_next_line.c get_next_line_utils.c \
+			ft_printf_utils.c ft_printf.c
 
 OBJ = $(addprefix $(OBJ_DIR), $(SRC_FILES:.c=.o))
 
