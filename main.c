@@ -6,7 +6,7 @@
 /*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 19:22:31 by icruces-          #+#    #+#             */
-/*   Updated: 2024/03/20 20:17:01 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/03/23 17:00:42 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ int main(int argc, char **argv)
 	str = ft_split(*argv, ' ');
 	
 	return 0;
-	//printf ( );
+	
 }
