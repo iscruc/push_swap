@@ -6,7 +6,7 @@
 /*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:06:02 by icruces-          #+#    #+#             */
-/*   Updated: 2024/03/20 20:26:53 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/03/24 11:23:33 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+
 
 void		ft_type(char const *str, int *len, va_list ap);
 void		ft_putchar(char str, int *len);

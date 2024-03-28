@@ -6,18 +6,18 @@
 /*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:53:19 by icruces-          #+#    #+#             */
-/*   Updated: 2024/03/20 19:19:20 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/03/24 14:54:17 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-int	ft_atol(const char *str)
+int	ft_atol(char *str)
 {
-	long int	i;
+	int	i;
 	int	sign;
-	int	value;
+	long int	value;
 
 	i = 0;
 	sign = 1;
@@ -40,6 +40,9 @@ int	ft_atol(const char *str)
 	}
 	return (value * sign);
 }
+
+
+
 /*
 int	main(void)
 {

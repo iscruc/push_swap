@@ -6,7 +6,7 @@
 #    By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/16 16:58:51 by icruces-          #+#    #+#              #
-#    Updated: 2024/03/20 19:51:25 by icruces-         ###   ########.fr        #
+#    Updated: 2024/03/25 19:11:15 by icruces-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,14 +22,14 @@ OBJ_DIR = obj/
 
 #Compiler and Flags
 CC 		= gcc 
-CFLAGS 	= -Wall -Wextra -Werror
+CFLAGS 	= -Wall -Wextra -Werror -g
 AR		= ar -crs
 RM 		= rm -f
 LDLIBS	:= -L$(LIBS) -lft
 COMPLIBS = -I$(INC) -I$(LIBS)/inc
 
 #Source Files
-SRC_FILES	=  parse.c errors.c
+SRC_FILES	=  errors_check.c errors_check_num.c errors_check_dup.c
 
 OBJ = $(addprefix $(OBJ_DIR), $(SRC_FILES:.c=.o))
 

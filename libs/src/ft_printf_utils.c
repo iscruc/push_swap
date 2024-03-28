@@ -6,7 +6,7 @@
 /*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 16:49:05 by icruces-          #+#    #+#             */
-/*   Updated: 2024/01/13 14:45:45 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/03/23 17:19:04 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_putchar(char str, int *len)
 	*len += write(1, &str, 1);
 }
 
-void	ft_putnbr_fd(int n, int fd, int *len, int is_unsigned)
+void	ft_putnbr_fd_printf(int n, int fd, int *len, int is_unsigned)
 {
 	unsigned int	num;
 
@@ -44,8 +44,8 @@ void	ft_putnbr_fd(int n, int fd, int *len, int is_unsigned)
 		ft_putchar((char)(num + '0'), len);
 	else
 	{
-		ft_putnbr_fd((num / 10), fd, len, is_unsigned);
-		ft_putnbr_fd((num % 10), fd, len, is_unsigned);
+		ft_putnbr_fd_printf((num / 10), fd, len, is_unsigned);
+		ft_putnbr_fd_printf((num % 10), fd, len, is_unsigned);
 	}
 }
 

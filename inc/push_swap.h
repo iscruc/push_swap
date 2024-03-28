@@ -12,8 +12,23 @@
 
 	} 				t_node;
 
+	typedef struct s_stack
+	{
+		int 			*temp;
+		struct s_stack 	*next;
+
+	} 				s_stack;
+
 	int main(int argc, char **argv);
     void inc_to_str(int argc, char **argv, char *str);
+	void	exit_error(void);
+	int is_number(char *str);
+	int check_integers(char *str);
+	void	ft_num_max(long nbr);
+	int new_errors_check(char *str);
+	int ft_strcmp(char *str1, char *str2);
+	int check_duplicates(int *str, int len);
+
 
 
 #endif
