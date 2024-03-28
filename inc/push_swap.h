@@ -7,17 +7,11 @@
 
 	typedef struct s_node
 	{
-		int 			*content;
+		int 			content;
+		int 			cost;
 		struct s_node 	*next;
 
 	} 				t_node;
-
-	typedef struct s_stack
-	{
-		int 			*temp;
-		struct s_stack 	*next;
-
-	} 				s_stack;
 
 	int main(int argc, char **argv);
     void inc_to_str(int argc, char **argv, char *str);
@@ -32,5 +26,6 @@
 	void ft_free(char  **str);
 
 
-
 #endif
+
+

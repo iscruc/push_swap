@@ -6,7 +6,7 @@
 /*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 19:22:31 by icruces-          #+#    #+#             */
-/*   Updated: 2024/03/28 17:55:56 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/03/28 19:11:01 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,53 +45,22 @@ long *ft_converter(int argc, char **argv)
 	}
 	return (nums);
 }
-/* long *ft_converter(int argc, char **argv)
-{
-	int i;
-	int j;
-	char **strs;
-	long *nums;
-
-	i = 1;
-	nums = (long *)malloc (sizeof(long)* (argc -1));
-	while(i < argc)
-	{
-		strs = ft_split(argv[i], ' ');
-		j = 0;
-		while(strs[j])
-		{
-			if(!is_number(strs[j]))
-				exit_error();
-			if(ft_repeatednumbers(argv, i))
-				exit_error();
-			nums[i-1] = ft_atol(strs[j]);
-			ft_num_max(nums[i-1]);
-			j++;
-		}
-		ft_free(strs);
-		i++;
-	}
-	return (nums);
-} */
 
 int main(int argc, char **argv)
 {
+	/* t_node *stack1;
+	t_node *stack2; */
+	
 	long *values;
 	int i;
 	
 	i = 0;
 	if (argc < 2)
 		return 0;
-/* 	else if (argc == 2 && ((argv[1][0] == '-' || argv[1][0] == '+') && \
-        argv[1][1] == '\0')) //pending to be fixed (currently getting extra error message when writen 1 number)
-		exit_error(); */
  	values = ft_converter(argc, argv);
-	while (i < argc - 1)
-	{
-		ft_printf("%d\n", values[i]);
-			//print_matrix(str);
-		i++;
-	}
+	/* stack1->content = values; 
+	stack2 = NULL; */
+
 	
 	//values = ft_converter(argc, argv);
 	return 0;

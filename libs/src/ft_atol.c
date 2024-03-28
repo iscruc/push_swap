@@ -6,14 +6,14 @@
 /*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:53:19 by icruces-          #+#    #+#             */
-/*   Updated: 2024/03/24 14:54:17 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/03/28 19:09:11 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-int	ft_atol(char *str)
+long	ft_atol(char *str)
 {
 	int	i;
 	int	sign;
