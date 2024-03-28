@@ -6,7 +6,7 @@
 /*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 19:22:31 by icruces-          #+#    #+#             */
-/*   Updated: 2024/03/28 19:11:01 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/03/28 19:51:31 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,13 @@ long *ft_converter(int argc, char **argv)
 
 int main(int argc, char **argv)
 {
-	/* t_node *stack1;
-	t_node *stack2; */
+	t_node *stack1;
+	t_node *stack1_1;
 	
+	// t_node *stack1_1;
+	stack1 = (t_node *)malloc(sizeof(t_node *));
+	stack1_1 = (t_node *)malloc(sizeof(t_node *));
+	// stack1_1=NULL;
 	long *values;
 	int i;
 	
@@ -58,8 +62,19 @@ int main(int argc, char **argv)
 	if (argc < 2)
 		return 0;
  	values = ft_converter(argc, argv);
-	/* stack1->content = values; 
-	stack2 = NULL; */
+	
+	/* while(values[i])
+	{
+		stack1->content = values[i];
+		stack1->next;
+		i++;
+	} */
+ 	/* stack1->content = values[0];
+	stack1->next = stack1_1;
+	stack1_1->content = values[1];
+	stack1_1->next = NULL; */
+	printf("%d %d", stack1->content, stack1_1->content);
+	//stack2 = NULL; 
 
 	
 	//values = ft_converter(argc, argv);
