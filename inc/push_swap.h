@@ -28,6 +28,7 @@
 	int new_errors_check(char *str);
 	int ft_strcmp(char *str1, char *str2);
 	int check_duplicates(int *str, int len);
+	int ft_repeatednumbers(char **str, int pos);
 
 
 

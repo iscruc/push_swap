@@ -6,27 +6,23 @@
 /*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 21:01:55 by icruces-          #+#    #+#             */
-/*   Updated: 2024/03/28 15:44:11 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/03/28 17:18:47 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_repeatednumbers(char *argv)
+int ft_repeatednumbers(char **str, int pos)
 {
 	int i;
-	int j;
 
 	i = 0;	
-	while (argv[i])
+	//printf("pos: %d\n", pos);
+	while (i < pos)
 	{
-		j = 1;
-		while(argv[j])
-		{
-			//if (j != i && ft_strcmp(argv[i], argv[j]) == 0)
-				return (1);
-			j++;
-		}
+		//ft_printf("repeated numbers check %s %s\n", str[i], str[pos]);
+		if (ft_strcmp(str[i], str[pos]) == 0)
+			return (1);
 		i++;
 	}
 	return (0);

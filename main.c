@@ -6,7 +6,7 @@
 /*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 19:22:31 by icruces-          #+#    #+#             */
-/*   Updated: 2024/03/28 16:37:17 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/03/28 17:24:46 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@ long *ft_converter(int argc, char **argv)
 	int j;
 	char **strs;
 	long *nums;
+	int cont; 
 
 	i = 1;
+	cont = 0;
 	nums = (long *)malloc (sizeof(long)* (argc -1));
 	while(i < argc)
 	{
@@ -37,16 +39,16 @@ long *ft_converter(int argc, char **argv)
 		{
 			if(!is_number(strs[j]))
 				exit_error();
-			nums[i - 1] = ft_atol(strs[j]);
-			//ft_printf("%d\n", nums[i - 1]);
-			ft_num_max(nums[i - 1]);
+			if(ft_repeatednumbers(argv, i))
+				exit_error();
+			nums[cont] = ft_atol(strs[j]);
+			ft_num_max(nums[cont]);
 			j++;
 		}
 		i++;
+		cont++;
 	}
 	return (nums);
-/* 	if (check_duplicates(nums, argc) != 1)
-		exit_error(); */
 }
 
 int main(int argc, char **argv)
