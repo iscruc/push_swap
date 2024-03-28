@@ -6,7 +6,7 @@
 /*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 19:22:31 by icruces-          #+#    #+#             */
-/*   Updated: 2024/03/28 17:38:34 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/03/28 17:55:56 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,33 @@ long *ft_converter(int argc, char **argv)
 	int j;
 	char **strs;
 	long *nums;
-	int cont; 
 
 	i = 1;
-	cont = 0;
+	nums = (long *)malloc (sizeof(long)* (argc -1));
+	while(i < argc)
+	{
+		strs = ft_split(argv[i], ' ');
+		j = 0;
+		while(strs[j])
+		{
+			errors_check(strs, argv, i, j);
+			nums[i-1] = ft_atol(strs[j]);
+			ft_num_max(nums[i-1]);
+			j++;
+		}
+		ft_free(strs);
+		i++;
+	}
+	return (nums);
+}
+/* long *ft_converter(int argc, char **argv)
+{
+	int i;
+	int j;
+	char **strs;
+	long *nums;
+
+	i = 1;
 	nums = (long *)malloc (sizeof(long)* (argc -1));
 	while(i < argc)
 	{
@@ -41,15 +64,15 @@ long *ft_converter(int argc, char **argv)
 				exit_error();
 			if(ft_repeatednumbers(argv, i))
 				exit_error();
-			nums[cont] = ft_atol(strs[j]);
-			ft_num_max(nums[cont]);
+			nums[i-1] = ft_atol(strs[j]);
+			ft_num_max(nums[i-1]);
 			j++;
 		}
+		ft_free(strs);
 		i++;
-		cont++;
 	}
 	return (nums);
-}
+} */
 
 int main(int argc, char **argv)
 {

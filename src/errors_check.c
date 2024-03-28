@@ -6,7 +6,7 @@
 /*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 21:01:55 by icruces-          #+#    #+#             */
-/*   Updated: 2024/03/28 17:18:47 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/03/28 18:14:39 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,12 @@ int ft_repeatednumbers(char **str, int pos)
 	return (0);
 }
 
-int new_errors_check(char *str)
+int errors_check(char **strs, char **argv, int i, int j)
 {
-	int i;
-	
-	i = 1;
-	/* while (i < (argc - 1) && is_number(str) == 1)
-		i++; */
-	if(is_number(str) != 1)
+	if(!is_number(strs[j]))
 		exit_error();
- 	/* if (ft_repeatednumbers(str) != 1)
-		exit_error(); */
+	if(ft_repeatednumbers(argv, i))
+		exit_error();
 	return (1);
 }
 
