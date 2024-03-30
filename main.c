@@ -6,7 +6,7 @@
 /*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 19:22:31 by icruces-          #+#    #+#             */
-/*   Updated: 2024/03/30 20:03:10 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/03/30 21:19:40 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ long *ft_converter(int argc, char **argv)
 	long *nums;
 
 	i = 1;
-	nums = (long *)malloc (sizeof(long)* (argc - 1));
+	nums = (long *)malloc (sizeof(long)* (argc - 1)); //we have to know the total number of numbers that will be added in the array in order for it to work with multiple argcs
 	while(i < argc)
 	{
 		strs = ft_split(argv[i], ' ');
@@ -36,15 +36,13 @@ long *ft_converter(int argc, char **argv)
 		while(strs[j])
 		{
 			errors_check(strs, argv, i, j);
-			nums[i-1] = ft_atol(strs[j]);
-			ft_num_max(nums[i-1]);
+			nums[i - 1] = ft_atol(strs[j]);
+			ft_num_max(nums[i - 1]); //we need to add a specific counter for this as well. 
 			j++;
 		}
 		ft_free(strs);
 		i++;
 	}
-
-	//ft_printf("cont: %d\n", *cont);
 	return (nums);
 }
 
