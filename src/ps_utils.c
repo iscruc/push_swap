@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ps_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:47:42 by icruces-          #+#    #+#             */
-/*   Updated: 2024/03/28 17:58:28 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/03/30 18:06:14 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_free(char  **str)
+void ft_free(char **str)
 {	
 	int i;
 	
@@ -23,4 +23,8 @@ void ft_free(char  **str)
 		i++;
 	}
 	free(str);
+}
+void ft_free_node(t_node *node)
+{	
+	free(node);
 }

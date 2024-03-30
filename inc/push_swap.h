@@ -7,8 +7,12 @@
 
 	typedef struct s_node
 	{
-		int 			content;
-		int 			cost;
+		long 			value;
+		int 			index;
+		int 			pos;
+		int 			target_pos;
+		int 			cost_a;
+		int 			cost_b;
 		struct s_node 	*next;
 	} 				t_node;
 
@@ -23,6 +27,8 @@
 	int check_duplicates(int *str, int len);
 	int ft_repeatednumbers(char **str, int pos);
 	void ft_free(char  **str);
+	void ft_free_node(t_node *node);
+	t_node *fill_stack(long *values, int size);
 
 
 #endif

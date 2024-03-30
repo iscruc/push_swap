@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors_check.c                                     :+:      :+:    :+:   */
+/*   ps_errors_check.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 21:01:55 by icruces-          #+#    #+#             */
-/*   Updated: 2024/03/28 18:14:39 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/03/30 18:04:45 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	exit_error(void)
 	write(2, "Error\n", 6);
 	exit(EXIT_FAILURE);
 }
+
 void	ft_num_max(long nbr)
 {
 	if (nbr > INT_MAX || nbr < INT_MIN)
