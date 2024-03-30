@@ -10,7 +10,6 @@
 		int 			content;
 		int 			cost;
 		struct s_node 	*next;
-
 	} 				t_node;
 
 	int main(int argc, char **argv);
