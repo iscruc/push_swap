@@ -6,7 +6,7 @@
 /*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:47:42 by icruces-          #+#    #+#             */
-/*   Updated: 2024/03/31 17:19:22 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/03/31 18:13:46 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,21 @@ void ft_free_node(t_node *node)
 	free(node);
 }
 
- void print_stack(t_node *stack)
+void ft_free_stack(t_node **stack)
+{
+	t_node *freer;
+	
+	if(!stack || !(*stack))
+		return ;
+	while(*stack)
+	{
+		freer = (*stack)->next;
+		free(*stack);
+		*stack = freer;
+	}
+}
+
+void print_stack(t_node *stack)
 {
 	ft_printf("%s %s\n", "Value", "Index");
 

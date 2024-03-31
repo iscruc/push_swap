@@ -6,19 +6,20 @@
 /*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 19:22:31 by icruces-          #+#    #+#             */
-/*   Updated: 2024/03/31 17:05:56 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/03/31 18:37:45 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*  static void print_matrix(char **matrix)
+
+void push_swap(t_list **stack_a, t_list **stack_b)
 {
-	for (int i = 0; matrix[i] != NULL; i++) 
-	{ // Asume que NULL marca el final de la matriz.
-        ft_printf("%s\n", matrix[i]);
+	if(!list_is_sorted(stack_a))
+	{
+		
 	}
-}  */
+}
 
 long *ft_converter(int argc, char **argv)
 {
@@ -58,12 +59,6 @@ int main(int argc, char **argv)
 	if (argc < 2)
 		return 0;
  	values = ft_converter(argc, argv);
-	
-	while (i < argc - 1)
-	{	
-		//ft_printf("number: %d\n", values[i]);
-		i++;
-	}
 
 	stack_a = fill_stack(values, argc - 1);
 	stack_b = NULL;
@@ -72,25 +67,12 @@ int main(int argc, char **argv)
 
 	print_stack(stack_a);
 
+	push_swap(stack_a, stack_b);
+	
 	ft_printf("number:%p ", stack_a);	
 
-	
-/* 
-	while(values[i])
-	{
-		stack1->content = values[i];
-		stack1->next;
-		
-		i++;
-	} 
-	 */
- 	/* stack1->content = values[0];
-	stack1->next = stack1_1;
-	stack1_1->content = values[1];
-	stack1_1->next = NULL; */
-	//printf("%d %d", stack1->content, stack1_1->content);
-	//stack2 = NULL; 
+	free(values);
+	ft_free_stack(&stack_a);
 
-	//values = ft_converter(argc, argv);
 	return 0;
 }
