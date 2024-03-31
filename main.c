@@ -6,7 +6,7 @@
 /*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 19:22:31 by icruces-          #+#    #+#             */
-/*   Updated: 2024/03/30 21:19:40 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/03/31 17:05:56 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,18 @@ int main(int argc, char **argv)
 	
 	while (i < argc - 1)
 	{	
-		ft_printf("number: %d\n", values[i]);
+		//ft_printf("number: %d\n", values[i]);
 		i++;
 	}
 
 	stack_a = fill_stack(values, argc - 1);
 	stack_b = NULL;
-	ft_printf("%dnumber:", stack_a);	
+
+	assign_index(stack_a, argc);
+
+	print_stack(stack_a);
+
+	ft_printf("number:%p ", stack_a);	
 
 	
 /* 
@@ -86,7 +91,6 @@ int main(int argc, char **argv)
 	//printf("%d %d", stack1->content, stack1_1->content);
 	//stack2 = NULL; 
 
-	
 	//values = ft_converter(argc, argv);
 	return 0;
 }

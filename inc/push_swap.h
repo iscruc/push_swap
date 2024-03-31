@@ -29,6 +29,9 @@
 	void ft_free(char  **str);
 	void ft_free_node(t_node *node);
 	t_node *fill_stack(long *values, int size);
+	void assign_index(t_node *stack, int stack_size);
+	void print_stack(t_node *stack);
+
 
 
 #endif

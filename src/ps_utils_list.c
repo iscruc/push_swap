@@ -6,7 +6,7 @@
 /*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 18:44:10 by icruces-          #+#    #+#             */
-/*   Updated: 2024/03/30 20:25:43 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/03/31 17:05:03 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ t_node *ft_add_new_node(long *content)
 	sending->next = NULL;
 	return (sending);
 }
-t_node *add_stack_tail(t_node *stack, t_node *new)
+
+void add_stack_tail(t_node **stack, t_node *new)
 {
 	t_node *tail;
 	
@@ -38,31 +39,67 @@ t_node *add_stack_tail(t_node *stack, t_node *new)
 		ft_free_node(new);
 		exit_error();
 	}
-	if (stack == NULL)
-		stack = new;
+	if (*stack == NULL)
+		*stack = new;
 	else
 	{
-		tail = stack_tail(stack);
+		tail = stack_tail(*stack);
 		tail->next = new;
 	}
-	return (stack);
 }
 
 t_node *fill_stack(long *values, int size)
 {
-	t_node *stack;
 	int i;
+	t_node *stack;
 	
 	i = 0;
-	//stack = (t_node *)malloc(sizeof(t_node *));
-	//ft_printf("in fill num: %d", stack);
 	stack = NULL;
 	while(i < size)
 	{
-		stack = add_stack_tail(stack, ft_add_new_node(&values[i]));
+		add_stack_tail(&stack, ft_add_new_node(&values[i]));
 		i++;
-		ft_printf("*stack: %d\n", stack->value);
-		stack = stack->next;
 	}
-	return stack;
+	i = 0;
+/* 	while(stack)
+	{
+		ft_printf("stack value: %d\n", stack->value);
+		stack = stack->next;
+	} */
+	//assign_index(stack, size + 1);
+	return (stack);
+}
+
+void assign_index(t_node *stack, int stack_size)
+{
+	t_node *tagger;
+	int 	tag;
+	t_node *highest;
+
+	while (--stack_size > 0)
+	{
+		tagger = stack;
+		tag = INT_MIN;
+		highest = NULL;
+		while (tagger)
+		{
+			if (tagger->value == INT_MIN && tagger->index == 0)
+				tagger->index = 1;
+			if (tagger->value > tag && tagger->index == 0)
+			{
+				tag = tagger->value;
+				highest = tagger;
+				tagger = stack; //volver al principio de la lista
+			}
+			else
+				tagger = tagger->next;
+		}
+		if (highest != NULL)
+			highest->index = stack_size;
+	}
+/*  	while(stack)
+	{
+		ft_printf("*stack index: %d\n", stack->index);
+		stack = stack->next;
+	}   */
 }

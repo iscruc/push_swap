@@ -6,7 +6,7 @@
 #    By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/16 16:58:51 by icruces-          #+#    #+#              #
-#    Updated: 2024/03/30 17:19:28 by icruces-         ###   ########.fr        #
+#    Updated: 2024/03/31 16:14:11 by icruces-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ LIBS = libs
 INC = inc/
 SRC_DIR = src/
 OBJ_DIR = obj/
-
+TESTER_DIR = push_swap.dSYM/
 
 #Compiler and Flags
 CC 		= gcc 
@@ -68,6 +68,7 @@ fclean:
 	$(RM) -rf $(OBJ_DIR)
 	$(RM) $(TARGET)
 	$(RM) $(NAME)
+	$(RM) -rf $(TESTER_DIR)
 	@make fclean -C $(LIBS)
 
 re: fclean all
