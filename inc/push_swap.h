@@ -42,6 +42,7 @@
 
 	//movements
 	int list_is_sorted(t_node **stack);
+	void ft_swap(t_node **stack);
 
 
 

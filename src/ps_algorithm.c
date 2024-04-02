@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_movements.c                                     :+:      :+:    :+:   */
+/*   ps_algorithm.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/31 17:29:04 by icruces-          #+#    #+#             */
-/*   Updated: 2024/04/02 22:36:46 by icruces-         ###   ########.fr       */
+/*   Created: 2024/04/02 22:12:32 by icruces-          #+#    #+#             */
+/*   Updated: 2024/04/02 22:35:43 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_swap(t_node **stack)
+void sort_three(t_node **stack)
 {
-	int temp_value;
-	int temp_index;
+	int first;
+	int second;
+	int third;
+
+	first = (*stack)->value;
+	second = (*stack)->next->value;
+	third = (*stack)->next->next->value;
+	if ((first > second) && (second < third) && (first > third))
+		
 	
-	if ((*stack == NULL) || (*stack)->next == NULL)
-		return;
-
-	temp_value = (*stack)->value;
-	(*stack)->value = (*stack)->next->value;
-	(*stack)->next->value = temp_value;
-	temp_index = (*stack)->index;
-	(*stack)->index = (*stack)->next->index;
-	(*stack)->next->index = temp_index;
-}
-
-void ft_rotate_ra()
+	3
+	2
+	1
+} 

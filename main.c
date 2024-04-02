@@ -6,18 +6,23 @@
 /*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 19:22:31 by icruces-          #+#    #+#             */
-/*   Updated: 2024/03/31 18:37:45 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/04/02 22:06:05 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 
-void push_swap(t_list **stack_a, t_list **stack_b)
+void push_swap(t_node **stack_a, int stack_size)
 {
 	if(!list_is_sorted(stack_a))
 	{
-		
+		ft_printf("holi\n");
+		if (stack_size == 2)
+			ft_swap(stack_a);
+		ft_printf("holi\n");
+/* 		else if (stack_size = 3)
+			sort_three(); */
 	}
 }
 
@@ -52,7 +57,6 @@ int main(int argc, char **argv)
 	t_node *stack_a;
 	t_node *stack_b;
 	long *values;
-	int i = 0;
 	//t_node *stack1_1;
 
 	//stack1_1 = (t_node *)malloc(sizeof(t_node *));
@@ -67,8 +71,10 @@ int main(int argc, char **argv)
 
 	print_stack(stack_a);
 
-	push_swap(stack_a, stack_b);
+	push_swap(&stack_a, argc - 1);
 	
+	print_stack(stack_a);
+
 	ft_printf("number:%p ", stack_a);	
 
 	free(values);
