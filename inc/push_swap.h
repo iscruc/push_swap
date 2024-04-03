@@ -42,7 +42,13 @@
 
 	//movements
 	int list_is_sorted(t_node **stack);
-	void ft_swap(t_node **stack);
+	void ft_swap_sa(t_node **stack);
+	void ft_rotate(t_node **stack);
+	void sort_three(t_node **stack);
+
+	t_node	*get_stack_bottom(t_node *stack);
+
+
 
 
 

@@ -6,7 +6,7 @@
 /*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 19:22:31 by icruces-          #+#    #+#             */
-/*   Updated: 2024/04/02 22:06:05 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/04/03 20:24:41 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,9 @@ void push_swap(t_node **stack_a, int stack_size)
 	{
 		ft_printf("holi\n");
 		if (stack_size == 2)
-			ft_swap(stack_a);
-		ft_printf("holi\n");
-/* 		else if (stack_size = 3)
-			sort_three(); */
+			ft_swap_sa(stack_a);
+ 		else if (stack_size == 3)
+			sort_three(stack_a);
 	}
 }
 

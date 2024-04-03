@@ -6,13 +6,13 @@
 /*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 17:29:04 by icruces-          #+#    #+#             */
-/*   Updated: 2024/04/02 22:36:46 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/04/03 20:19:53 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_swap(t_node **stack)
+void ft_swap_sa(t_node **stack)
 {
 	int temp_value;
 	int temp_index;
@@ -28,4 +28,3 @@ void ft_swap(t_node **stack)
 	(*stack)->next->index = temp_index;
 }
 
-void ft_rotate_ra()
