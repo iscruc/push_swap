@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
+/*   By: icruces- <ismaelcruc@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 19:22:31 by icruces-          #+#    #+#             */
-/*   Updated: 2024/04/03 20:24:41 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/04/07 21:33:44 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ long *ft_converter(int argc, char **argv)
 int main(int argc, char **argv)
 {
 	t_node *stack_a;
-	t_node *stack_b;
+	//t_node *stack_b;
 	long *values;
 	//t_node *stack1_1;
 
@@ -64,7 +64,7 @@ int main(int argc, char **argv)
  	values = ft_converter(argc, argv);
 
 	stack_a = fill_stack(values, argc - 1);
-	stack_b = NULL;
+	//stack_b = NULL;
 
 	assign_index(stack_a, argc);
 
