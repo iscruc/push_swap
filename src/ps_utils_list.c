@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ps_utils_list.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
+/*   By: icruces- <ismaelcruc@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 18:44:10 by icruces-          #+#    #+#             */
-/*   Updated: 2024/03/31 17:05:03 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/05/11 16:47:12 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "push_swap.h"
+
 t_node *stack_tail(t_node *stack)
 {
 	while (stack && stack->next != NULL)

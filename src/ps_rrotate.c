@@ -6,7 +6,7 @@
 /*   By: icruces- <ismaelcruc@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 19:54:42 by icruces-          #+#    #+#             */
-/*   Updated: 2024/04/07 21:54:51 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/07/18 21:51:40 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,27 @@
 
 void ft_rrotate(t_node **stack)
 {
-    t_node *head;
+    t_node *prev;
     t_node *tail;
 
-    ft_printf("rot\n");
+    prev = NULL;
+    ft_printf("rrot\n");
     // Check if the stack is empty or has only one node
     if (!*stack || !(*stack)->next)
         return;
-    
-    head = *stack;
-    *stack = (*stack)->next;
-    head->next = NULL; // Move this line here
-
+        
     // Find the tail of the stack
     tail = *stack;
     while (tail && tail->next != NULL)
+    {
+        prev = tail;
         tail = tail->next;
-
+    }
+     // Make the node before the last node the new tail
+    prev->next = NULL;
+    
     // Attach the old head to the end
-    tail->next = head;
+    tail->next = *stack;
+    *stack = tail;
 }
 

@@ -6,18 +6,17 @@
 /*   By: icruces- <ismaelcruc@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 19:22:31 by icruces-          #+#    #+#             */
-/*   Updated: 2024/04/07 21:33:44 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/07/18 21:24:23 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
 void push_swap(t_node **stack_a, int stack_size)
 {
 	if(!list_is_sorted(stack_a))
 	{
-		ft_printf("holi\n");
+		ft_printf("not_sorted\n");
 		if (stack_size == 2)
 			ft_swap_sa(stack_a);
  		else if (stack_size == 3)
@@ -67,11 +66,8 @@ int main(int argc, char **argv)
 	//stack_b = NULL;
 
 	assign_index(stack_a, argc);
-
 	print_stack(stack_a);
-
 	push_swap(&stack_a, argc - 1);
-	
 	print_stack(stack_a);
 
 	ft_printf("number:%p ", stack_a);	
