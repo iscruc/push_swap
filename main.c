@@ -6,7 +6,7 @@
 /*   By: icruces- <ismaelcruc@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 19:22:31 by icruces-          #+#    #+#             */
-/*   Updated: 2024/07/18 21:24:23 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/07/18 23:30:38 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ long *ft_converter(int argc, char **argv)
 int main(int argc, char **argv)
 {
 	t_node *stack_a;
-	//t_node *stack_b;
+	t_node *stack_b;
 	long *values;
 	//t_node *stack1_1;
 
@@ -63,7 +63,7 @@ int main(int argc, char **argv)
  	values = ft_converter(argc, argv);
 
 	stack_a = fill_stack(values, argc - 1);
-	//stack_b = NULL;
+	stack_b = NULL;
 
 	assign_index(stack_a, argc);
 	print_stack(stack_a);
@@ -71,7 +71,11 @@ int main(int argc, char **argv)
 	print_stack(stack_a);
 
 	ft_printf("number:%p ", stack_a);	
-
+	
+	ft_push(&stack_a, &stack_b);
+	print_stack(stack_a);
+	print_stack(stack_b);
+	
 	free(values);
 	ft_free_stack(&stack_a);
 
