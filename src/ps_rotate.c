@@ -6,7 +6,7 @@
 /*   By: icruces- <ismaelcruc@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 19:54:42 by icruces-          #+#    #+#             */
-/*   Updated: 2024/07/20 20:21:46 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/07/21 21:17:29 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,24 @@ void ft_rotate(t_node **stack)
     tail->next = head;
     before_tail->next = NULL;
     assign_position(*stack);
+}
+
+void make_ra(t_node **stack_a)
+{
+    ft_rotate(stack_a);
+    ft_printf("ra");
+}
+
+void make_rb(t_node **stack_b)
+{
+    ft_rotate(stack_b);
+	ft_printf("rb\n");
+}
+
+void make_rr(t_node **stack_a, t_node **stack_b)
+{
+    ft_rotate(stack_a);
+    ft_rotate(stack_b);
+    ft_printf("rr\n");
 }
 

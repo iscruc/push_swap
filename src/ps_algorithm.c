@@ -6,7 +6,7 @@
 /*   By: icruces- <ismaelcruc@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 22:12:32 by icruces-          #+#    #+#             */
-/*   Updated: 2024/07/21 13:59:06 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/07/21 22:22:51 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,24 @@ void sort_three(t_node **stack)
 		ft_swap_sa(stack);
 	}
 } 
+/* void excecute_sequence(t_node **stack_a, t_node **stack_b)
+{
+	t_node *temp_stack_b;
+	
+	temp_stack_b = *stack_b;
+	while(temp_stack_b->cost_a > 0)
+	{
+		ra(stack_a);
+		temp_stack_b->cost_a--;
+	}
+	while(temp_stack_b->cost_a < 0)
+	{
+		rra(stack_a);
+		temp_stack_b->cost_a++;
+	}
+	
+	
+} */
 
 void sort_them_all(t_node **stack_a, t_node **stack_b)
 {	
@@ -72,15 +90,18 @@ void sort_them_all(t_node **stack_a, t_node **stack_b)
 	print_stack(*stack_b);
 	push_all_to_b(stack_a, stack_b);
 	
-	t_node *temp;
-	temp = *stack_b;
-	while (temp != NULL)
-	{
-		printf("inside_while\n");
+	printf("Sort_them_all:\n ");
+	while (*stack_b != NULL)
+	{		
 		assign_position(*stack_a);
 		assign_position(*stack_b);
 		assign_target(*stack_a, *stack_b);
-		temp = (temp)->next;
-	} 
-
+		calculate_costs(*stack_a, *stack_b);
+		printf("STACK_A\n");
+		print_stack(*stack_a);
+		printf("STACK_B\n");
+		print_stack(*stack_b);
+		move_cheapest_node(stack_a, stack_b);
+	}
 }
+
