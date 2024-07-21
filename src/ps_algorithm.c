@@ -6,7 +6,7 @@
 /*   By: icruces- <ismaelcruc@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 22:12:32 by icruces-          #+#    #+#             */
-/*   Updated: 2024/07/20 21:45:11 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/07/21 13:59:06 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,5 @@ void sort_them_all(t_node **stack_a, t_node **stack_b)
 		assign_target(*stack_a, *stack_b);
 		temp = (temp)->next;
 	} 
-	printf("STACK B final\n");
-	print_stack(*stack_b);
 
 }

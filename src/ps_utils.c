@@ -6,7 +6,7 @@
 /*   By: icruces- <ismaelcruc@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:47:42 by icruces-          #+#    #+#             */
-/*   Updated: 2024/07/20 18:24:06 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/07/21 13:59:54 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,13 @@ void ft_free_stack(t_node **stack)
 void print_stack(t_node *stack)
 {
 	//ft_printf("%s %s\n", "Value", "Index");
-	printf("%s %s %s %s\n", "Value", "Index", "Pos", "Target Pos");
+	printf("%s %s %s %s\n", "Value", "Index", " Pos", "  Target_Pos");
 
 	while(stack)
 	{		
 		printf("  %ld  |  %d  |  %d  |  %d\n", stack->value, stack->index, stack->pos, stack->target_pos);
 		stack = stack->next;
 	}
-	printf("  %s\n", "A");
+	printf("  \n");
 
 }

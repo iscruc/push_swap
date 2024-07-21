@@ -37,7 +37,8 @@
 	void assign_position(t_node *stack_a);
 	void assign_target(t_node *stack_a, t_node *stack_b);
 	int stack_size(t_node *stack);
-
+	int find_closest_superior(t_node *stack_a, int b_index);
+	int find_smallest_index_pos(t_node *stack_a);
 
 
 	//list init
