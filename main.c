@@ -6,7 +6,7 @@
 /*   By: icruces- <ismaelcruc@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 19:22:31 by icruces-          #+#    #+#             */
-/*   Updated: 2024/07/21 13:59:15 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/07/21 15:24:37 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,10 +71,11 @@ int main(int argc, char **argv)
 	//current_position(stack_a, stack_b);
 	print_stack(stack_a);
 	push_swap(&stack_a, argc - 1, &stack_b);
-	printf("STACK A final\n");
-	print_stack(stack_a);
-	printf("STACK B final\n");
-	print_stack(stack_b);
+	
+		printf("STACK A final\n");
+		print_stack(stack_a);
+		printf("STACK B final\n");
+		print_stack(stack_b);
 
 /* 	ft_printf("number:%p ", stack_a);	
 	
