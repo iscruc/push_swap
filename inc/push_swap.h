@@ -28,11 +28,16 @@
 	int check_duplicates(int *str, int len);
 	int ft_repeatednumbers(char **str, int pos);
 
+
 	//utils
 	void ft_free(char  **str);
 	void ft_free_node(t_node *node);
 	void	exit_error(void);
 	void ft_free_stack(t_node **stack);
+	void assign_position(t_node *stack_a);
+	void assign_target(t_node *stack_a, t_node *stack_b);
+	int stack_size(t_node *stack);
+
 
 
 	//list init
@@ -47,6 +52,8 @@
 	void sort_three(t_node **stack);
 	void ft_rrotate(t_node **stack);
 	void ft_push(t_node **origin, t_node **dest);
+	void sort_them_all(t_node **stack_a, t_node **stack_b);
+
 
 
 	t_node	*get_stack_bottom(t_node *stack);

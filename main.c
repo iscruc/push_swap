@@ -6,13 +6,13 @@
 /*   By: icruces- <ismaelcruc@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 19:22:31 by icruces-          #+#    #+#             */
-/*   Updated: 2024/07/18 23:30:38 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/07/20 21:45:32 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void push_swap(t_node **stack_a, int stack_size)
+void push_swap(t_node **stack_a, int stack_size, t_node **stack_b)
 {
 	if(!list_is_sorted(stack_a))
 	{
@@ -21,6 +21,8 @@ void push_swap(t_node **stack_a, int stack_size)
 			ft_swap_sa(stack_a);
  		else if (stack_size == 3)
 			sort_three(stack_a);
+		else if (stack_size > 3)
+			sort_them_all(stack_a, stack_b);
 	}
 }
 
@@ -66,18 +68,21 @@ int main(int argc, char **argv)
 	stack_b = NULL;
 
 	assign_index(stack_a, argc);
+	//current_position(stack_a, stack_b);
 	print_stack(stack_a);
-	push_swap(&stack_a, argc - 1);
+	push_swap(&stack_a, argc - 1, &stack_b);
+	printf("STACK A final\n");
 	print_stack(stack_a);
 
-	ft_printf("number:%p ", stack_a);	
+/* 	ft_printf("number:%p ", stack_a);	
 	
 	ft_push(&stack_a, &stack_b);
+	ft_printf("stack A:\n");
 	print_stack(stack_a);
-	print_stack(stack_b);
+	ft_printf("stack B:\n");
+	print_stack(stack_b); */
 	
 	free(values);
 	ft_free_stack(&stack_a);
-
 	return 0;
 }

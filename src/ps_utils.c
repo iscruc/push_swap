@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
+/*   By: icruces- <ismaelcruc@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:47:42 by icruces-          #+#    #+#             */
-/*   Updated: 2024/03/31 18:13:46 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/07/20 18:24:06 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,14 @@ void ft_free_stack(t_node **stack)
 
 void print_stack(t_node *stack)
 {
-	ft_printf("%s %s\n", "Value", "Index");
+	//ft_printf("%s %s\n", "Value", "Index");
+	printf("%s %s %s %s\n", "Value", "Index", "Pos", "Target Pos");
 
 	while(stack)
 	{		
-		ft_printf("  %d  |  %d\n", stack->value, stack->index);
+		printf("  %ld  |  %d  |  %d  |  %d\n", stack->value, stack->index, stack->pos, stack->target_pos);
 		stack = stack->next;
 	}
-	ft_printf("  %s\n", "A");
+	printf("  %s\n", "A");
 
 }

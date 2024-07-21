@@ -6,7 +6,7 @@
 /*   By: icruces- <ismaelcruc@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 19:54:42 by icruces-          #+#    #+#             */
-/*   Updated: 2024/04/07 22:22:32 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/07/20 20:21:46 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,15 @@ void ft_rotate(t_node **stack)
 
     *stack = (*stack)->next;
     head->next = NULL; // Move this line here
-
     // Find the tail of the stack
     tail = *stack;
     while (tail && tail->next != NULL)
         tail = tail->next;
     while (before_tail && before_tail->next && before_tail->next->next != NULL)
 		before_tail = before_tail->next;
-
     // Attach the old head to the end
     tail->next = head;
     before_tail->next = NULL;
+    assign_position(*stack);
 }
 

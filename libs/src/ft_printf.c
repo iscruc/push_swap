@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icruces- < icruces-@student.42malaga.co    +#+  +:+       +#+        */
+/*   By: icruces- <ismaelcruc@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:05:58 by icruces-          #+#    #+#             */
-/*   Updated: 2024/03/23 17:19:10 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/07/20 12:56:05 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,14 @@ int	ft_printf(char const *str, ...)
 		return (-1);
 	while (*str)
 	{
+		//printf ("len:%d", len);
 		if (*str == '%' && (*(str + 1) == 'c' || *(str + 1) == 'd' || *(str
 					+ 1) == 's' || *(str + 1) == 'p' || *(str + 1) == 'i'
 				|| *(str + 1) == 'u' || *(str + 1) == 'x' || *(str + 1) == 'X'
 				|| *(str + 1) == '%'))
-			ft_type(++str, &len, ap);
+		ft_type(++str, &len, ap);
 		else
-			len += write(1, str, 1);
+			len += write(1, str, 1);	
 		str++;
 	}
 	return (len);

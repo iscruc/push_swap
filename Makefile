@@ -6,7 +6,7 @@
 #    By: icruces- <ismaelcruc@gmail.com>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/16 16:58:51 by icruces-          #+#    #+#              #
-#    Updated: 2024/07/18 23:29:23 by icruces-         ###   ########.fr        #
+#    Updated: 2024/07/20 20:46:45 by icruces-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ LDLIBS	:= -L$(LIBS) -lft
 COMPLIBS = -I$(INC) -I$(LIBS)/inc
 
 #Source Files
-SRC_FILES	=  ps_errors_check.c ps_errors_check_num.c ps_errors_check_dup.c ps_utils.c ps_utils_list.c ps_swap.c ps_list_checks.c ps_algorithm.c ps_rotate.c ps_rrotate.c ps_push.c
+SRC_FILES	=  ps_errors_check.c ps_errors_check_num.c ps_errors_check_dup.c ps_utils.c ps_utils_list.c ps_swap.c ps_list_checks.c ps_algorithm.c ps_rotate.c ps_rrotate.c ps_push.c ps_position.c stack_size.c
 
 OBJ = $(addprefix $(OBJ_DIR), $(SRC_FILES:.c=.o))
 
