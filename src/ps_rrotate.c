@@ -6,7 +6,7 @@
 /*   By: icruces- <ismaelcruc@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 19:54:42 by icruces-          #+#    #+#             */
-/*   Updated: 2024/07/21 20:57:47 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/07/28 18:12:26 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,17 @@ void ft_rrotate(t_node **stack)
 void make_rra(t_node **stack_a)
 {
     ft_rrotate(stack_a);
-    ft_printf("rra");
+    ft_printf("rra\n");
 }
 void make_rrb(t_node **stack_b)
 {
     ft_rrotate(stack_b);
-    ft_printf("rrb");
+    ft_printf("rrb\n");
 }
 
 void make_rrr(t_node **stack_a, t_node **stack_b)
 {
     ft_rrotate(stack_a);
     ft_rrotate(stack_b);
-    ft_printf("rrr");
+    ft_printf("rrr\n");
 }

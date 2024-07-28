@@ -6,7 +6,7 @@
 /*   By: icruces- <ismaelcruc@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 22:12:32 by icruces-          #+#    #+#             */
-/*   Updated: 2024/07/21 22:22:51 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/07/28 19:49:47 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ void sort_them_all(t_node **stack_a, t_node **stack_b)
 	print_stack(*stack_a);
 	print_stack(*stack_b);
 	push_all_to_b(stack_a, stack_b);
+	sort_three(stack_a);
 	
 	printf("Sort_them_all:\n ");
 	while (*stack_b != NULL)
