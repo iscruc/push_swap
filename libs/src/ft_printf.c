@@ -6,7 +6,7 @@
 /*   By: icruces- <ismaelcruc@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:05:58 by icruces-          #+#    #+#             */
-/*   Updated: 2024/07/20 12:56:05 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/07/28 20:32:43 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	ft_printf(char const *str, ...)
 			len += write(1, str, 1);	
 		str++;
 	}
+	va_end(ap);
 	return (len);
 }
 

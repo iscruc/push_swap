@@ -6,7 +6,7 @@
 /*   By: icruces- <ismaelcruc@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 20:34:00 by icruces-          #+#    #+#             */
-/*   Updated: 2024/07/28 18:23:31 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/07/28 20:06:00 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,3 +116,4 @@ void move_cheapest_node(t_node **stack_a, t_node **stack_b)
     
     make_pa(stack_a, stack_b);
 }
+

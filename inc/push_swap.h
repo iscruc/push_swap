@@ -67,6 +67,7 @@
 
 	//algorithm
 	void move_cheapest_node(t_node **stack_a, t_node **stack_b);
+	void sort_a_extra(t_node *stack_a);
 
 	//costs
 	void calculate_costs(t_node *stack_a, t_node *stack_b);
