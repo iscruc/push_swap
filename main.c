@@ -6,7 +6,7 @@
 /*   By: icruces- <ismaelcruc@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 19:22:31 by icruces-          #+#    #+#             */
-/*   Updated: 2024/07/21 15:24:37 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/07/31 01:09:16 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void push_swap(t_node **stack_a, int stack_size, t_node **stack_b)
 {
 	if(!list_is_sorted(stack_a))
 	{
-		ft_printf("not_sorted\n");
 		if (stack_size == 2)
 			ft_swap_sa(stack_a);
  		else if (stack_size == 3)
@@ -69,22 +68,14 @@ int main(int argc, char **argv)
 
 	assign_index(stack_a, argc);
 	//current_position(stack_a, stack_b);
-	print_stack(stack_a);
+	//print_stack(stack_a);
 	push_swap(&stack_a, argc - 1, &stack_b);
 	
-		printf("STACK A final\n");
+/* 		printf("STACK A final\n");
 		print_stack(stack_a);
 		printf("STACK B final\n");
-		print_stack(stack_b);
-
-/* 	ft_printf("number:%p ", stack_a);	
-	
-	ft_push(&stack_a, &stack_b);
-	ft_printf("stack A:\n");
-	print_stack(stack_a);
-	ft_printf("stack B:\n");
-	print_stack(stack_b); */
-	
+		print_stack(stack_b); */
+		
 	free(values);
 	ft_free_stack(&stack_a);
 	return 0;

@@ -6,7 +6,7 @@
 /*   By: icruces- <ismaelcruc@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 22:12:32 by icruces-          #+#    #+#             */
-/*   Updated: 2024/07/28 22:33:58 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/07/31 01:09:36 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,16 +56,9 @@ void push_all_to_b(t_node **stack_a, t_node **stack_b)
 	size = stack_size(*stack_a);
 	while (size > 3)
 	{
-		printf("%d\n", size);
-		print_stack(*stack_b);
-		print_stack(*stack_a);
-/* 		char x;
-		scanf("%c", &x); */
 		ft_push(stack_a, stack_b);
-		//temp=temp->next;
 		size--;
 	}
-	printf("out of the while\n");
 }
 
 void sort_three(t_node **stack)
@@ -73,7 +66,6 @@ void sort_three(t_node **stack)
 	int highest;
 
 	highest = find_highest_index(*stack);
-	printf("Initial stack:\n ");
 	if ((*stack)->index == highest)
 	{
 		ft_rotate(stack);
@@ -108,35 +100,71 @@ void sort_three(t_node **stack)
 
 void sort_them_all(t_node **stack_a, t_node **stack_b)
 {	
-	print_stack(*stack_a);
-	print_stack(*stack_b);
+	//print_stack(*stack_a);
+	//print_stack(*stack_b);
 	push_all_to_b(stack_a, stack_b);
 	sort_three(stack_a);
 	
-	printf("Sort_them_all:\n ");
 	while (*stack_b != NULL)
 	{		
 		assign_position(*stack_a);
 		assign_position(*stack_b);
 		assign_target(*stack_a, *stack_b);
 		calculate_costs(*stack_a, *stack_b);
-		printf("STACK_A\n");
-		print_stack(*stack_a);
-		printf("STACK_B\n");
-		print_stack(*stack_b);
 		move_cheapest_node(stack_a, stack_b);
-		if (!list_is_sorted(stack_a))
+/*  	 	if (*stack_b != NULL && (*stack_b)->next == NULL)
 		{
-			sort_a_extra(*stack_a);
-		}
+		} */
 	}
+ 	while (!list_is_sorted (stack_a))
+	{
+
+		move_smallest_node(stack_a);
+	}
+
 }
- void sort_a_extra(t_node *stack_a)
+
+void move_smallest_node(t_node **stack_a)
+{
+	int size;
+	int min_pos;
+	t_node *current_pos;
+
+	if (stack_a == NULL)
+		return ;
+	min_pos = find_smallest_index_pos(*stack_a);
+	size = stack_size(*stack_a);
+	current_pos = *stack_a;
+	if (current_pos == NULL)
+        return;
+	
+	if (min_pos <= size / 2) 
+	{
+        while (current_pos->pos < min_pos) 
+		{
+            make_ra(stack_a);
+            current_pos->pos--;
+        }
+    } 
+	else 
+	{
+        while (current_pos->pos < size - min_pos) 
+		{
+            make_rra(stack_a);
+            current_pos->pos++;
+        }
+    }
+
+}
+
+ /* void sort_a_extra(t_node *stack_a)
 {
 	int size;
 	int min_pos;
 	int i;
 	
+	if (stack_a == NULL)
+		return ;
 	size = stack_size(stack_a);
 	min_pos = find_lowest_pos(stack_a);
 	i = 0;
@@ -156,7 +184,5 @@ void sort_them_all(t_node **stack_a, t_node **stack_b)
             i++;
         }
     }
-	/* if(!list_is_sorted(stack_a))
-		sort_a_extra(stack_a); */
 } 
-
+ */
