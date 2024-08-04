@@ -6,7 +6,7 @@
 /*   By: icruces- <ismaelcruc@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 22:12:32 by icruces-          #+#    #+#             */
-/*   Updated: 2024/07/31 01:09:36 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/08/03 18:06:09 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void push_all_to_b(t_node **stack_a, t_node **stack_b)
 	size = stack_size(*stack_a);
 	while (size > 3)
 	{
-		ft_push(stack_a, stack_b);
+		make_pb(stack_a, stack_b);
 		size--;
 	}
 }
@@ -68,15 +68,15 @@ void sort_three(t_node **stack)
 	highest = find_highest_index(*stack);
 	if ((*stack)->index == highest)
 	{
-		ft_rotate(stack);
+		make_ra(stack);
 	}
 	else if ((*stack)->next->index == highest)
 	{
-		ft_rrotate(stack);
+		make_rra(stack);
 	}
 	if ((*stack)->index > (*stack)->next->index)
 	{
-		ft_swap_sa(stack);
+		make_sa(stack);
 	}
 } 
 /* void excecute_sequence(t_node **stack_a, t_node **stack_b)

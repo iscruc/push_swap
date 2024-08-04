@@ -6,7 +6,7 @@
 /*   By: icruces- <ismaelcruc@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:47:42 by icruces-          #+#    #+#             */
-/*   Updated: 2024/07/28 20:48:50 by icruces-         ###   ########.fr       */
+/*   Updated: 2024/08/03 17:32:06 by icruces-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,28 @@ void print_stack(t_node *stack)
 	}
 	printf("  \n");
 
+}
+
+int count_total_values(int argc, char **argv)
+{
+	int  i;
+	int total_numbers;
+	int j;
+	char **strs;
+
+	total_numbers = 0;
+	i = 1;
+	while (i < argc)
+	{
+        strs = ft_split(argv[i], ' ');
+        j = 0;
+        while (strs[j])
+        {
+            total_numbers++;
+            j++;
+        }
+        ft_free(strs);
+        i++;
+	}
+	return (total_numbers);
 }

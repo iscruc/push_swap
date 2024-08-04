@@ -40,7 +40,7 @@
 	int find_closest_superior(t_node *stack_a, int b_index);
 	int find_smallest_index_pos(t_node *stack_a);
 	void excecute_sequence(t_node **stack_a, t_node **stack_b);
-
+	int count_total_values(int argc, char **argv);
 
 	//list init
 	t_node *fill_stack(long *values, int size);
@@ -64,6 +64,11 @@
 	void make_rra(t_node **stack_a);
 	void make_rrb(t_node **stack_b);
 	void make_rrr(t_node **stack_a, t_node **stack_b);
+	void make_sa(t_node **stack_a);
+	void make_sb(t_node **stack_b);
+	void make_ss(t_node **stack_a, t_node **stack_b);
+
+
 
 	//algorithm
 	void move_cheapest_node(t_node **stack_a, t_node **stack_b);
